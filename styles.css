@@ -14,7 +14,7 @@ nav ul li a { color:var(--blanco); text-decoration:none; font-weight:600; font-s
 nav ul li a:hover { color:var(--verde); }
 
 /* HERO */
-.hero { position:relative; height:88vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; background:radial-gradient(ellipse at 60% 40%,#00301a 0%,var(--negro) 70%); }
+.hero { position:relative; height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; background:radial-gradient(ellipse at 60% 40%,#00301a 0%,var(--negro) 70%); }
 .hero::before { content:''; position:absolute; width:600px; height:600px; border:80px solid rgba(0,230,118,0.06); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); animation:pulse 3s ease-in-out infinite; }
 .hero::after { content:'⚽'; position:absolute; font-size:22rem; opacity:0.04; animation:spin 20s linear infinite; user-select:none; }
 @keyframes pulse { 0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1} 50%{transform:translate(-50%,-50%) scale(1.1);opacity:0.5} }
