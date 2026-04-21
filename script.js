@@ -7,6 +7,14 @@ const partidos = [
   { liga:'Bundesliga',       local:'Dortmund',     visita:'Bayern',         hora:'17:30', live:false },
 ];
 
+const canchas = [
+  { id:1, nombre:'Cancha El Campín', ubicacion:'Carrera 5 No. 26-20', ciudad:'Bogotá', telefono:'3101234567', capacidad:100, tipo_superficie:'Pasto natural', precio_hora:150000, horario_apertura:'06:00', horario_cierre:'22:00', disponible:true },
+  { id:2, nombre:'Futsal La Vila', ubicacion:'Calle 72 No. 11-45', ciudad:'Bogotá', telefono:'3102345678', capacidad:50, tipo_superficie:'Pasto sintético', precio_hora:80000, horario_apertura:'07:00', horario_cierre:'23:00', disponible:true },
+  { id:3, nombre:'Cancha Los Andes', ubicacion:'Diagonal 45 No. 20-15', ciudad:'Medellín', telefono:'3103456789', capacidad:80, tipo_superficie:'Pasto natural', precio_hora:120000, horario_apertura:'06:30', horario_cierre:'22:30', disponible:true },
+  { id:4, nombre:'Futbol 5 Central', ubicacion:'Calle 10 No. 5-30', ciudad:'Cali', telefono:'3104567890', capacidad:40, tipo_superficie:'Sintético', precio_hora:60000, horario_apertura:'07:00', horario_cierre:'23:00', disponible:false },
+  { id:5, nombre:'Cancha Norte', ubicacion:'Transversal 9 No. 120-50', ciudad:'Bogotá', telefono:'3105678901', capacidad:120, tipo_superficie:'Pasto natural', precio_hora:180000, horario_apertura:'06:00', horario_cierre:'23:00', disponible:true },
+];
+
 const tabla = [
   { equipo:'Millonarios',     pj:12, g:8, e:3, p:1, gf:22, gc:9  },
   { equipo:'América de Cali', pj:12, g:7, e:3, p:2, gf:19, gc:11 },
@@ -94,6 +102,30 @@ tabla.forEach((t, i) => {
     <td>${t.gf}</td><td>${t.gc}</td>
     <td class="pts">${pts}</td>
   </tr>`;
+});
+
+/* RENDER CANCHAS */
+const cg = document.getElementById('canchas-grid');
+canchas.forEach(c => {
+  const estado = c.disponible ? '✅ Disponible' : '❌ No disponible';
+  const badgeClass = c.disponible ? 'badge-disponible' : 'badge-nodisponible';
+  cg.innerHTML += `<div class="cancha-card">
+    <div class="cancha-header">
+      <div class="cancha-nombre">${c.nombre}</div>
+      <span class="badge ${badgeClass}">${estado}</span>
+    </div>
+    <div class="cancha-info">
+      <div class="cancha-item">📍 ${c.ubicacion}</div>
+      <div class="cancha-item">🏙️ ${c.ciudad}</div>
+      <div class="cancha-item">👥 Capacidad: ${c.capacidad} personas</div>
+      <div class="cancha-item">🌱 ${c.tipo_superficie}</div>
+      <div class="cancha-item">⏰ ${c.horario_apertura} - ${c.horario_cierre}</div>
+      <div class="cancha-precio">💰 $${c.precio_hora.toLocaleString('es-CO')}/hora</div>
+    </div>
+    <div class="cancha-footer">
+      <a href="tel:${c.telefono}" class="btn-small">📞 Reservar</a>
+    </div>
+  </div>`;
 });
 
 /* RENDER NOTICIAS */

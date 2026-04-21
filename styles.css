@@ -104,6 +104,23 @@ tbody td { padding:0.75rem 1rem; }
 .badge-activo { display:inline-block; background:var(--verde); color:var(--negro); font-size:0.62rem; font-weight:700; padding:2px 7px; border-radius:50px; letter-spacing:1px; margin-left:6px; vertical-align:middle; }
 .badge-retirado { display:inline-block; background:#444; color:#aaa; font-size:0.62rem; font-weight:700; padding:2px 7px; border-radius:50px; letter-spacing:1px; margin-left:6px; vertical-align:middle; }
 
+/* CANCHAS */
+#canchas { background:var(--negro); }
+.canchas-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.5rem; }
+.cancha-card { background:var(--gris-claro); border-radius:10px; overflow:hidden; transition:transform 0.2s,box-shadow 0.2s; border-left:4px solid var(--verde); display:flex; flex-direction:column; }
+.cancha-card:hover { transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,230,118,0.15); }
+.cancha-header { padding:1.2rem 1.4rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; border-bottom:1px solid #222; }
+.cancha-nombre { font-family:'Poppins',sans-serif; font-size:1.2rem; font-weight:700; color:var(--blanco); }
+.badge { display:inline-block; font-size:0.7rem; font-weight:700; padding:4px 10px; border-radius:50px; letter-spacing:1px; white-space:nowrap; }
+.badge-disponible { background:rgba(0,230,118,0.2); color:var(--verde); }
+.badge-nodisponible { background:rgba(229,57,53,0.2); color:#ff6b6b; }
+.cancha-info { padding:1.2rem 1.4rem; flex:1; display:flex; flex-direction:column; gap:0.7rem; font-size:0.95rem; }
+.cancha-item { color:#aaa; }
+.cancha-precio { font-family:'Poppins',sans-serif; font-size:1.4rem; color:var(--amarillo); font-weight:700; margin-top:0.5rem; }
+.cancha-footer { padding:1rem 1.4rem; border-top:1px solid #222; display:flex; gap:0.8rem; }
+.btn-small { flex:1; text-align:center; padding:0.7rem 1rem; background:var(--verde); color:var(--negro); text-decoration:none; border-radius:4px; font-weight:700; font-size:0.9rem; transition:background 0.2s; border:none; cursor:pointer; }
+.btn-small:hover { background:var(--verde-oscuro); }
+
 /* FOOTER */
 footer { background:var(--gris); border-top:2px solid #222; text-align:center; padding:2rem; color:#444; font-size:0.85rem; }
 footer span { color:var(--verde); }
