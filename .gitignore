@@ -1,0 +1,7 @@
+node_modules/
+
+# Artefactos de compilación TypeScript
+main.js
+main.js.map
+main.d.ts
+main.d.ts.map
