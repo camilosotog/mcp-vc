@@ -1,0 +1,126 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --verde: #00e676; --verde-oscuro: #00c853; --negro: #0a0a0a;
+  --gris: #1a1a1a; --gris-claro: #2a2a2a; --blanco: #f5f5f5; --amarillo: #ffd600;
+}
+body { background: var(--negro); color: var(--blanco); font-family: 'Inter', sans-serif; min-height: 100vh; overflow-x: hidden; }
+
+/* NAV */
+nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 2.5rem; background:rgba(10,10,10,0.95); border-bottom:2px solid var(--verde); position:sticky; top:0; z-index:100; }
+.logo { font-family:'Poppins',sans-serif; font-size:2rem; color:var(--verde); letter-spacing:2px; }
+.logo span { color:var(--blanco); }
+nav ul { list-style:none; display:flex; gap:1.5rem; flex-wrap:wrap; }
+nav ul li a { color:var(--blanco); text-decoration:none; font-weight:600; font-size:0.9rem; letter-spacing:1px; text-transform:uppercase; transition:color 0.2s; }
+nav ul li a:hover { color:var(--verde); }
+
+/* HERO */
+.hero { position:relative; height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; background:radial-gradient(ellipse at 60% 40%,#00301a 0%,var(--negro) 70%); }
+.hero::before { content:''; position:absolute; width:600px; height:600px; border:80px solid rgba(0,230,118,0.06); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); animation:pulse 3s ease-in-out infinite; }
+.hero::after { content:'⚽'; position:absolute; font-size:22rem; opacity:0.04; animation:spin 20s linear infinite; user-select:none; }
+@keyframes pulse { 0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1} 50%{transform:translate(-50%,-50%) scale(1.1);opacity:0.5} }
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+.hero-content { position:relative; z-index:1; }
+.hero-content h1 { font-family:'Poppins',sans-serif; font-size:clamp(4rem,12vw,9rem); line-height:0.95; color:var(--blanco); }
+.hero-content h1 span { color:var(--verde); }
+.hero-content p { margin-top:1.2rem; font-size:1.2rem; color:#aaa; max-width:480px; margin-inline:auto; }
+.btn { display:inline-block; margin-top:2rem; padding:0.85rem 2.4rem; background:var(--verde); color:var(--negro); font-family:'Poppins',sans-serif; font-size:1.2rem; letter-spacing:2px; border:none; border-radius:4px; cursor:pointer; text-decoration:none; transition:background 0.2s,transform 0.15s; }
+.btn:hover { background:var(--verde-oscuro); transform:translateY(-2px); }
+
+/* SECCIONES */
+section { padding:5rem 2.5rem; }
+.section-title { font-family:'Poppins',sans-serif; font-size:2.8rem; letter-spacing:3px; color:var(--verde); margin-bottom:0.3rem; }
+.section-sub { color:#777; font-size:0.95rem; margin-bottom:2.5rem; text-transform:uppercase; letter-spacing:1px; }
+
+/* PARTIDOS */
+#partidos { background:var(--gris); }
+.partidos-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.2rem; }
+.partido-card { background:var(--gris-claro); border-radius:8px; padding:1.4rem; border-left:4px solid var(--verde); display:flex; flex-direction:column; gap:0.8rem; transition:transform 0.2s; cursor:pointer; }
+.partido-card:hover { transform:translateY(-4px); }
+.partido-liga { font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--verde); font-weight:700; }
+.partido-equipos { display:flex; align-items:center; justify-content:space-between; font-family:'Poppins',sans-serif; font-size:1.5rem; gap:0.5rem; }
+.vs { color:#555; font-size:1rem; }
+.partido-hora { font-size:0.85rem; color:#888; }
+.badge-live { display:inline-block; background:#e53935; color:#fff; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; letter-spacing:1px; animation:blink 1.2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* LIVE */
+#live { background:var(--negro); text-align:center; }
+.live-box { display:inline-flex; align-items:center; gap:2rem; background:var(--gris); border:2px solid var(--verde); border-radius:12px; padding:2.5rem 4rem; position:relative; overflow:hidden; }
+.live-box::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 0%,rgba(0,230,118,0.08),transparent 60%); }
+.live-team { font-family:'Poppins',sans-serif; font-size:2rem; }
+.live-score { font-family:'Poppins',sans-serif; font-size:5rem; color:var(--verde); line-height:1; }
+.live-min { font-size:0.85rem; color:#888; margin-top:0.5rem; }
+
+/* TABLA */
+#tabla { background:var(--negro); }
+.tabla-wrapper { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:0.95rem; }
+thead tr { border-bottom:2px solid var(--verde); }
+thead th { padding:0.8rem 1rem; text-align:left; color:var(--verde); font-family:'Poppins',sans-serif; letter-spacing:1px; font-size:1rem; }
+tbody tr { border-bottom:1px solid #222; transition:background 0.15s; }
+tbody tr:hover { background:var(--gris); }
+tbody td { padding:0.75rem 1rem; }
+.pos-num { font-family:'Poppins',sans-serif; font-size:1.1rem; color:#555; }
+.pos-num.top { color:var(--verde); }
+.team-name { font-weight:700; }
+.pts { font-family:'Poppins',sans-serif; font-size:1.3rem; color:var(--amarillo); }
+
+/* NOTICIAS */
+#noticias { background:var(--gris); }
+.noticias-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+.noticia-card { background:var(--gris-claro); border-radius:8px; overflow:hidden; transition:transform 0.2s; cursor:pointer; }
+.noticia-card:hover { transform:translateY(-5px); }
+.noticia-img { height:160px; display:flex; align-items:center; justify-content:center; font-size:5rem; background:linear-gradient(135deg,#001a0e,#003d1f); }
+.noticia-body { padding:1.2rem; }
+.noticia-cat { font-size:0.72rem; color:var(--verde); font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+.noticia-titulo { margin-top:0.4rem; font-weight:700; font-size:1rem; line-height:1.4; }
+.noticia-fecha { margin-top:0.7rem; font-size:0.8rem; color:#666; }
+
+/* GOLEADORES */
+#goleadores { background:var(--negro); }
+.goleadores-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:1.2rem; }
+.goleador-card { background:var(--gris-claro); border-radius:10px; padding:1.4rem 1.6rem; display:flex; align-items:center; gap:1.2rem; transition:transform 0.2s,box-shadow 0.2s; position:relative; overflow:hidden; }
+.goleador-card::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,230,118,0.05) 0%,transparent 60%); }
+.goleador-card:hover { transform:translateY(-4px); box-shadow:0 8px 30px rgba(0,230,118,0.1); }
+.goleador-card.oro   { border-left:5px solid #ffd700; }
+.goleador-card.plata { border-left:5px solid #c0c0c0; }
+.goleador-card.bronce{ border-left:5px solid #cd7f32; }
+.goleador-card.resto { border-left:5px solid #333; }
+.gol-rank { font-family:'Poppins',sans-serif; font-size:2.2rem; min-width:2.5rem; text-align:center; line-height:1; }
+.gol-rank.oro    { color:#ffd700; }
+.gol-rank.plata  { color:#c0c0c0; }
+.gol-rank.bronce { color:#cd7f32; }
+.gol-rank.resto  { color:#555; }
+.gol-emoji { font-size:2.8rem; }
+.gol-info { flex:1; }
+.gol-nombre { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:1px; }
+.gol-detalle { font-size:0.82rem; color:#888; margin-top:0.25rem; }
+.gol-detalle span { color:#bbb; }
+.gol-stats { text-align:right; min-width:65px; }
+.gol-num { font-family:'Bebas Neue',sans-serif; font-size:2.6rem; color:var(--verde); line-height:1; }
+.gol-label { font-size:0.68rem; color:#666; text-transform:uppercase; letter-spacing:1px; }
+.gol-bar-wrap { margin-top:0.5rem; height:4px; background:#333; border-radius:2px; }
+.gol-bar { height:100%; border-radius:2px; background:linear-gradient(90deg,var(--verde),var(--amarillo)); }
+.badge-activo { display:inline-block; background:var(--verde); color:var(--negro); font-size:0.62rem; font-weight:700; padding:2px 7px; border-radius:50px; letter-spacing:1px; margin-left:6px; vertical-align:middle; }
+.badge-retirado { display:inline-block; background:#444; color:#aaa; font-size:0.62rem; font-weight:700; padding:2px 7px; border-radius:50px; letter-spacing:1px; margin-left:6px; vertical-align:middle; }
+
+/* CANCHAS */
+#canchas { background:var(--negro); }
+.canchas-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.5rem; }
+.cancha-card { background:var(--gris-claro); border-radius:10px; overflow:hidden; transition:transform 0.2s,box-shadow 0.2s; border-left:4px solid var(--verde); display:flex; flex-direction:column; }
+.cancha-card:hover { transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,230,118,0.15); }
+.cancha-header { padding:1.2rem 1.4rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; border-bottom:1px solid #222; }
+.cancha-nombre { font-family:'Poppins',sans-serif; font-size:1.2rem; font-weight:700; color:var(--blanco); }
+.badge { display:inline-block; font-size:0.7rem; font-weight:700; padding:4px 10px; border-radius:50px; letter-spacing:1px; white-space:nowrap; }
+.badge-disponible { background:rgba(0,230,118,0.2); color:var(--verde); }
+.badge-nodisponible { background:rgba(229,57,53,0.2); color:#ff6b6b; }
+.cancha-info { padding:1.2rem 1.4rem; flex:1; display:flex; flex-direction:column; gap:0.7rem; font-size:0.95rem; }
+.cancha-item { color:#aaa; }
+.cancha-precio { font-family:'Poppins',sans-serif; font-size:1.4rem; color:var(--amarillo); font-weight:700; margin-top:0.5rem; }
+.cancha-footer { padding:1rem 1.4rem; border-top:1px solid #222; display:flex; gap:0.8rem; }
+.btn-small { flex:1; text-align:center; padding:0.7rem 1rem; background:var(--verde); color:var(--negro); text-decoration:none; border-radius:4px; font-weight:700; font-size:0.9rem; transition:background 0.2s; border:none; cursor:pointer; }
+.btn-small:hover { background:var(--verde-oscuro); }
+
+/* FOOTER */
+footer { background:var(--gris); border-top:2px solid #222; text-align:center; padding:2rem; color:#444; font-size:0.85rem; }
+footer span { color:var(--verde); }

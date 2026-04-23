@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⚽ FútbolZone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Fútbol<span>Zone</span></div>
+  <ul>
+    <li><a href="#partidos">Partidos</a></li>
+    <li><a href="#tabla">Tabla</a></li>
+    <li><a href="#canchas">Canchas</a></li>
+    <li><a href="#noticias">Noticias</a></li>
+    <li><a href="#live">En Vivo</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>El Fútbol<br><span>Es Pasión</span></h1>
+    <p>Resultados en tiempo real, tabla de posiciones y las últimas noticias del balompié mundial.</p>
+    <a href="#partidos" class="btn">Ver Partidos de Hoy</a>
+  </div>
+</section>
+
+<section id="partidos">
+  <h2 class="section-title">Partidos del Día</h2>
+  <p class="section-sub">Lunes 23 de marzo · 2026</p>
+  <div class="partidos-grid" id="partidos-grid"></div>
+</section>
+
+<section id="live">
+  <h2 class="section-title">En Vivo Ahora</h2>
+  <p class="section-sub">Marcador actualizado en tiempo real</p>
+  <div class="live-box">
+    <div><div class="live-team">Colombia</div></div>
+    <div>
+      <div class="live-score">2 – 1</div>
+      <div class="live-min"><span class="badge-live">EN VIVO</span> &nbsp;<span id="minuto">67'</span></div>
+    </div>
+    <div><div class="live-team">Argentina</div></div>
+  </div>
+</section>
+
+<section id="tabla">
+  <h2 class="section-title">Tabla de Posiciones</h2>
+  <p class="section-sub">Liga BetPlay · Fecha 12</p>
+  <div class="tabla-wrapper">
+    <table>
+      <thead><tr><th>#</th><th>Equipo</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th><th>Pts</th></tr></thead>
+      <tbody id="tabla-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="canchas">
+  <h2 class="section-title">Canchas de Fútbol</h2>
+  <p class="section-sub">Encuentra y reserva las mejores canchas</p>
+  <div class="canchas-grid" id="canchas-grid"></div>
+</section>
+
+<section id="noticias">
+  <h2 class="section-title">Últimas Noticias</h2>
+  <p class="section-sub">Tendencias del fútbol mundial</p>
+  <div class="noticias-grid" id="noticias-grid"></div>
+</section>
+
+<footer>Hecho con <span>⚽</span> por FútbolZone · 2026</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
